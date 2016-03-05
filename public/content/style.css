@@ -1,0 +1,11 @@
+body {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.media-object__small {
+  width: 300px;
+}
+
+.badge{
+  color:yellow
+}
