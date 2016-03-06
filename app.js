@@ -3,6 +3,7 @@ angular.module('TouskiClothingApp', [
     'TouskiClothingApp.headerNav',
     'TouskiClothingApp.footerNav',
     'TouskiClothingApp.products',
+    'TouskiClothingApp.product',
 ])
 .config(function($locationProvider,$stateProvider, $urlRouterProvider) {
   //
@@ -16,6 +17,10 @@ angular.module('TouskiClothingApp', [
     .state('products', {
       url: "/products",
       templateUrl: "public/products/productslist.html"
+    })
+    .state('product', {
+      url: "/product/:productId",
+      templateUrl: "public/product/product.html"
     })
     .state('contact', {
       url: "/contact",
