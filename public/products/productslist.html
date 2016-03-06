@@ -1,13 +1,14 @@
 <div class="row">
   <div class="col-md-12" ng-controller="ProductsController">
-    <div class="col-md-4" ng-repeat="product in products">
+    <div class="col-md-4 thumbnail" ng-repeat="product in products">
         <a ui-sref="product({productId : {{product.Id}} })" class="thumbnail">
           <img ng-src="{{product.image}}" alt="...">
         </a>
-        <div class="">
-          <h4 class="">{{product.name}}<span class="badge">{{product.price}}$</span></h4>
-          {{product.description}}
-        </div>
+      <div class="caption">
+          <h4 class="">{{product.name}}<span class="badge">{{product.price | currency:"$":0}}</span></h4>
+          <p>{{product.description}}</p>
+          <a ui-sref="product({productId : {{product.Id}} })" class="btn btn-primary" role="button">Détails</a>
+      </div>
     </div>
   </div>
 </div>
