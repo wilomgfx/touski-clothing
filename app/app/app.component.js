@@ -34,9 +34,13 @@ System.register(['angular2/core', 'angular2/router', '../products/products.compo
             }],
         execute: function() {
             AppComponent = (function () {
-                function AppComponent() {
+                function AppComponent(_router) {
+                    this._router = _router;
                     this.title = 'Touski Clothing';
                 }
+                AppComponent.prototype.isActive = function (instruction) {
+                    return this._router.isRouteActive(this._router.generate(instruction));
+                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
@@ -49,24 +53,11 @@ System.register(['angular2/core', 'angular2/router', '../products/products.compo
                         ]
                     }),
                     router_1.RouteConfig([
-                        {
-                            path: '/',
-                            name: 'Home',
-                            component: home_component_1.HomeComponent,
-                            useAsDefault: true
-                        },
-                        {
-                            path: '/apparels',
-                            name: 'Apparels',
-                            component: products_component_1.ProductsComponent
-                        },
-                        {
-                            path: '/detail/:id',
-                            name: 'ProductDetail',
-                            component: product_component_1.ProductDetailComponent
-                        },
+                        { path: '/', name: 'Home', component: home_component_1.HomeComponent, useAsDefault: true },
+                        { path: '/apparels', name: 'Apparels', component: products_component_1.ProductsComponent },
+                        { path: '/product/detail/:id', name: 'ProductDetail', component: product_component_1.ProductDetailComponent },
                     ]), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [router_1.Router])
                 ], AppComponent);
                 return AppComponent;
             }());

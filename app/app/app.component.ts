@@ -1,5 +1,5 @@
 import { Component }  from 'angular2/core';
-import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
+import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS , Router} from 'angular2/router';
 import {ProductsComponent} from '../products/products.component';
 import {ApparelService} from '../services/apparel.service';
 import {HomeComponent} from '../home/home.component';
@@ -17,22 +17,9 @@ import {ProductDetailComponent} from '../product/product.component';
 })
 
 @RouteConfig([
-        {
-           path : '/',
-           name : 'Home',
-           component : HomeComponent,
-           useAsDefault : true
-        },
-        {
-            path: '/apparels',
-            name: 'Apparels',
-            component: ProductsComponent
-        },
-        {
-            path: '/detail/:id',
-            name: 'ProductDetail',
-            component: ProductDetailComponent
-        },
+        { path : '/',name : 'Home',component : HomeComponent,useAsDefault : true },
+        { path: '/apparels',name: 'Apparels',component: ProductsComponent },
+        { path: '/product/detail/:id',name: 'ProductDetail',component: ProductDetailComponent},
         // {
         //     path: '/about',
         //     name: 'About',
@@ -42,4 +29,11 @@ import {ProductDetailComponent} from '../product/product.component';
 
 export class AppComponent {
   title = 'Touski Clothing';
+  constructor(public _router: Router)
+  {
+
+  }
+  isActive(instruction: any[]): boolean {
+    return this._router.isRouteActive(this._router.generate(instruction));
+  }
 }
