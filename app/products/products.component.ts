@@ -3,10 +3,13 @@ import { Router } from 'angular2/router';
 import {OnInit} from 'angular2/core';
 import {Apparel} from '../models/apparel';
 import {ApparelService} from '../services/apparel.service';
+import {CurrencyPipe} from 'angular2/common';
 
 @Component({
   selector: 'yaecs-products',
-  templateUrl: 'app/products/products.component.html'
+  templateUrl: 'app/products/products.component.html',
+  styleUrls:['app/products/products.component.css'],
+  pipes:[CurrencyPipe]
 })
 
 export class ProductsComponent  implements OnInit {

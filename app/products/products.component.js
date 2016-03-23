@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', '../services/apparel.service'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', '../services/apparel.service', 'angular2/common'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', '../services/apparel.servic
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, apparel_service_1;
+    var core_1, router_1, apparel_service_1, common_1;
     var ProductsComponent;
     return {
         setters:[
@@ -22,6 +22,9 @@ System.register(['angular2/core', 'angular2/router', '../services/apparel.servic
             },
             function (apparel_service_1_1) {
                 apparel_service_1 = apparel_service_1_1;
+            },
+            function (common_1_1) {
+                common_1 = common_1_1;
             }],
         execute: function() {
             ProductsComponent = (function () {
@@ -43,7 +46,9 @@ System.register(['angular2/core', 'angular2/router', '../services/apparel.servic
                 ProductsComponent = __decorate([
                     core_1.Component({
                         selector: 'yaecs-products',
-                        templateUrl: 'app/products/products.component.html'
+                        templateUrl: 'app/products/products.component.html',
+                        styleUrls: ['app/products/products.component.css'],
+                        pipes: [common_1.CurrencyPipe]
                     }), 
                     __metadata('design:paramtypes', [apparel_service_1.ApparelService, router_1.Router])
                 ], ProductsComponent);

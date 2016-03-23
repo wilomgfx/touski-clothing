@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', '../products/products.component', '../services/apparel.service'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', '../products/products.component', '../services/apparel.service', '../home/home.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', '../products/products.compo
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, products_component_1, apparel_service_1;
+    var core_1, router_1, products_component_1, apparel_service_1, home_component_1;
     var AppComponent;
     return {
         setters:[
@@ -25,6 +25,9 @@ System.register(['angular2/core', 'angular2/router', '../products/products.compo
             },
             function (apparel_service_1_1) {
                 apparel_service_1 = apparel_service_1_1;
+            },
+            function (home_component_1_1) {
+                home_component_1 = home_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -42,7 +45,19 @@ System.register(['angular2/core', 'angular2/router', '../products/products.compo
                             apparel_service_1.ApparelService
                         ]
                     }),
-                    router_1.RouteConfig([]), 
+                    router_1.RouteConfig([
+                        {
+                            path: '/',
+                            name: 'Home',
+                            component: home_component_1.HomeComponent,
+                            useAsDefault: true
+                        },
+                        {
+                            path: '/apparels',
+                            name: 'Apparels',
+                            component: products_component_1.ProductsComponent
+                        },
+                    ]), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
                 return AppComponent;
