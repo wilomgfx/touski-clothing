@@ -1,6 +1,5 @@
-<div class="row">
-  <div class="col-md-12">
-    <div class="col-md-4" *ngFor="#apparel of apparels">
+<div class="row" *ngIf="apparel">
+    <div class="col-md-12">
       <div class="card">
         <div class="card-block">
           <h4 class="card-title">{{apparel.name}}</h4>
@@ -9,10 +8,9 @@
         <img class="card-img-top" data-src="{{apparel.imagePath}}" alt="Card image cap">
         <div class="card-block">
           <p class="card-text">{{apparel.description}}</p>
-          <a class="card-link" (click)="gotoDetail(apparel)">Plus de détails</a>
           <a href="#" class="btn btn-primary">Ajouter au pannier</a>
+          <button class="btn btn-default" (click)="goBack()">Back</button>
         </div>
       </div>
     </div>
-  </div>
 </div>

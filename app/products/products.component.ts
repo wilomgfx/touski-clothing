@@ -33,7 +33,8 @@ export class ProductsComponent  implements OnInit {
        this.getApparels();
      }
 
-    //  gotoDetail() {
-    //    this._router.navigate(['HeroDetail', { id: this.selectedHero.id }]);
-    //  }
+     gotoDetail(apparel: Apparel) {
+       var link = ['ProductDetail', { id: apparel.Id }];
+       this._router.navigate(link);
+   }
 }

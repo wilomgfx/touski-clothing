@@ -3,6 +3,7 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/route
 import {ProductsComponent} from '../products/products.component';
 import {ApparelService} from '../services/apparel.service';
 import {HomeComponent} from '../home/home.component';
+import {ProductDetailComponent} from '../product/product.component';
 
 @Component({
   selector: 'my-app',
@@ -26,6 +27,11 @@ import {HomeComponent} from '../home/home.component';
             path: '/apparels',
             name: 'Apparels',
             component: ProductsComponent
+        },
+        {
+            path: '/detail/:id',
+            name: 'ProductDetail',
+            component: ProductDetailComponent
         },
         // {
         //     path: '/about',

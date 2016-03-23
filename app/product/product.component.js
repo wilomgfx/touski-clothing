@@ -11,7 +11,7 @@ System.register(['angular2/core', 'angular2/router', '../services/apparel.servic
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, router_1, apparel_service_1, common_1;
-    var ProductsComponent;
+    var ProductDetailComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -27,39 +27,34 @@ System.register(['angular2/core', 'angular2/router', '../services/apparel.servic
                 common_1 = common_1_1;
             }],
         execute: function() {
-            ProductsComponent = (function () {
-                function ProductsComponent(_apparelService, _router) {
+            ProductDetailComponent = (function () {
+                function ProductDetailComponent(_apparelService, _routeParams) {
                     this._apparelService = _apparelService;
-                    this._router = _router;
+                    this._routeParams = _routeParams;
                 }
-                ProductsComponent.prototype.onSelect = function (apparel) {
-                    this.selectedApparel = apparel;
-                };
-                ProductsComponent.prototype.getApparels = function () {
+                ProductDetailComponent.prototype.ngOnInit = function () {
                     var _this = this;
-                    // => syntax is equivalent to function(heroes) return this.heroes
-                    this._apparelService.getApparels().then(function (apparels) { return _this.apparels = apparels; });
+                    var id = +this._routeParams.get('id');
+                    this._apparelService.getApparel(id)
+                        .then(function (apparel) { return _this.apparel = apparel; });
                 };
-                ProductsComponent.prototype.ngOnInit = function () {
-                    this.getApparels();
+                ProductDetailComponent.prototype.goBack = function () {
+                    window.history.back();
                 };
-                ProductsComponent.prototype.gotoDetail = function (apparel) {
-                    var link = ['ProductDetail', { id: apparel.Id }];
-                    this._router.navigate(link);
-                };
-                ProductsComponent = __decorate([
+                ProductDetailComponent = __decorate([
                     core_1.Component({
-                        selector: 'yaecs-products',
-                        templateUrl: 'app/products/products.component.html',
-                        styleUrls: ['app/products/products.component.css'],
-                        pipes: [common_1.CurrencyPipe]
+                        selector: 'yaecs-product-detail',
+                        templateUrl: 'app/product/product.component.html',
+                        styleUrls: ['app/product/product.component.css'],
+                        pipes: [common_1.CurrencyPipe],
+                        inputs: ['apparel']
                     }), 
-                    __metadata('design:paramtypes', [apparel_service_1.ApparelService, router_1.Router])
-                ], ProductsComponent);
-                return ProductsComponent;
+                    __metadata('design:paramtypes', [apparel_service_1.ApparelService, router_1.RouteParams])
+                ], ProductDetailComponent);
+                return ProductDetailComponent;
             }());
-            exports_1("ProductsComponent", ProductsComponent);
+            exports_1("ProductDetailComponent", ProductDetailComponent);
         }
     }
 });
-//# sourceMappingURL=products.component.js.map
+//# sourceMappingURL=product.component.js.map
