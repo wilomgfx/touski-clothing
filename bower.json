@@ -1,13 +1,20 @@
 {
-  "name": "touski_clothing",
+  "name": "touski-clothing",
   "authors": [
-    "Wilomgfx <william@hugocantin.info>"
+    "William Cantin <william@wcantin.ca>"
   ],
-  "description": "Web store for TouskiClothing",
-  "main": "public/index.html",
+  "description": "touski-clothing eCommerce",
+  "main": "index.html",
   "moduleType": [],
-  "license": "MIT",
-  "homepage": "",
+  "keywords": [
+    "angularjs",
+    "angular2",
+    "twitterBootstrap",
+    "bootstrap",
+    "eCommerce"
+  ],
+  "license": "",
+  "homepage": "http://touskiclothing.ca/",
   "private": true,
   "ignore": [
     "**/.*",
@@ -17,10 +24,8 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "latest",
-    "jQuery": "latest",
-    "bootstrap-css": "^3.3.6",
-    "angular-ui-router": "^0.2.18"
+    "bootstrap": "v4.0.0-alpha.2",
+    "tether": "^1.2.0"
   },
   "install": {
     "path": "libs/"

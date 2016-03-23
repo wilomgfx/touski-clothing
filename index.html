@@ -1,46 +1,39 @@
-<!DOCTYPE html>
-<html lang="fr">
+<html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Angular 2 QuickStart</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TouskiClothing</title>
+    <link rel="stylesheet" href="content/styles.css">
+    <link rel="stylesheet" href="libs/bootstrap/bootstrap.css">
     <base href="/">
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="libs/bootstrap-css/bootstrap.min.css">
-    <link rel="stylesheet" href="public/content/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
-  <body ng-app="TouskiClothingApp">
-    <!-- Navbar directive -->
-    <headernav></headernav>
-
-    <div class="container">
-
-      <div ui-view></div>
-
-    </div>
-    <!-- FooterNav directive -->
-    <footernav></footernav>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="libs/jquery/jquery.js"></script>
-    <!-- AngularJS -->
-    <script src="libs/angular/angular.js"></script>
-    <script src="libs/angular-ui-router/angular-ui-router.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="libs/bootstrap-css/bootstrap.min.js"></script>
-    <!-- AngularJs Modules -->
-    <script type="text/javascript" src="app.js"></script>
-    <script type="text/javascript" src="public/navigation/header.js"></script>
-    <script type="text/javascript" src="public/navigation/footer.js"></script>
-    <script type="text/javascript" src="public/products/products.js"></script>
-    <script type="text/javascript" src="public/product/product.js"></script>
+  <!-- Display the application -->
+  <body>
+    <my-app>Loading...</my-app>
   </body>
+  <!-- Load libraries -->
+  <!-- IE required polyfills, in this exact order -->
+  <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+  <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+  <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>
+  <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+  <script src="node_modules/systemjs/dist/system.src.js"></script>
+  <script src="node_modules/rxjs/bundles/Rx.js"></script>
+  <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+  <script src="node_modules/angular2/bundles/router.dev.js"></script>
+
+  <script src="libs/tether/tether.js"></script>
+  <script src="libs/jquery/jquery.js"></script>
+  <script src="libs/bootstrap/bootstrap.js"></script>
+  <!-- Configure SystemJS -->
+  <script>
+  System.config({
+    packages: {
+      app: {
+        format: 'register',
+        defaultExtension: 'js'
+      }
+    }
+  });
+  System.import('app/main').then(null, console.error.bind(console));
+  </script>
 </html>

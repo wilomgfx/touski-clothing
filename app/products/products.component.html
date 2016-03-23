@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="col-md-4">
+        <!-- <a ui-sref="product({productId : {{product.Id}} })" class="thumbnail">
+          <img ng-src="{{product.image}}" alt="...">
+        </a> -->
+      <!-- <div class="caption">
+          <h4 class="">{{product.name}}<span class="badge">{{product.price | currency:"$":0}}</span></h4>
+          <p>{{product.description}}</p>
+          <a ui-sref="product({productId : {{product.Id}} })" class="btn btn-primary" role="button">Détails</a>
+      </div> -->
+      <div class="card" *ngFor="#apparel of apparels">
+        <img class="card-img-top" data-src="..." alt="Card image cap">
+        <div class="card-block">
+          <h4 class="card-title">{{apparel.name}} {{apparel.price}}</h4>
+          <p class="card-text">{{apparel.description}}</p>
+          <a href="#" class="btn btn-primary">Button</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
