@@ -1,4 +1,4 @@
 # touski-clothing
 Website for touski-clothing
 
-## Uses Angular for the front end
+## Uses Angular2 for the front end
