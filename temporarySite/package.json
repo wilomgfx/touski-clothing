@@ -1,0 +1,13 @@
+{
+  "name": "Groupetransbocop",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "browser-sync": "^2.12.5",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.2.0"
+  }
+}

@@ -1,0 +1,14 @@
+.link__webmestre{
+    color:$webMestreLinkColor;
+    font-size: 1.5em;
+}
+
+.text{
+    &--darkBlue{
+        color : $darkblue;
+    }
+
+    &--white{
+        color:white;
+    }
+}

@@ -1,0 +1,52 @@
+.nav-justified__section--centered {
+  padding-top: 50px; }
+
+.nav-pills__links--white {
+  color: white; }
+
+.nav-pills__links--bordered {
+  border: 2px;
+  border-color: white;
+  border-style: solid; }
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+  background-color: #EEEEEE;
+  color: black; }
+
+.nav-item > a {
+  color: #f0ad4e;
+  font-size: 1.2em; }
+
+.link__webmestre {
+  color: #ffa100;
+  font-size: 1.5em; }
+
+.text--darkBlue {
+  color: #0e1682; }
+
+.text--white {
+  color: white; }
+
+.contact {
+  margin-top: 35px;
+  font-size: 20px; }
+  .contact--info {
+    padding-top: 10px; }
+    .contact--info i {
+      margin-right: 20px; }
+    .contact--info__grayed {
+      color: #747474; }
+      .contact--info__grayed i {
+        margin-right: 10px; }
+
+.section--darkBlue {
+  background-color: #0e1682;
+  color: white; }
+
+.btn__jumbotron--darkBlue {
+  color: #ffffff;
+  background-color: #0e1682;
+  border-color: #0e1682; }
+
+.btn__jumbotron:hover {
+  color: #f0ad4e; }

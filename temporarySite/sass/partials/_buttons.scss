@@ -1,0 +1,15 @@
+.btn{
+
+    &__jumbotron{
+
+        &--darkBlue{
+            color: #ffffff;
+            background-color: $darkblue;
+            border-color: $darkblue;
+        }
+
+        &:hover{
+            color:$warningColor;
+        }
+    }
+}
